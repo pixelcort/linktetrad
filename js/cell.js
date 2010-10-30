@@ -26,7 +26,18 @@ LT.Cell.prototype = {
     return true; // Piece was dropped
   },
   neighbor: function(direction) { // Returns the neighbor cell, or null if it is out of bounds
-    // Check if the direction is out of bounds
+    var neighborX = this.x,
+        neighborY= this.y;
+    switch (direction) {
+      case 'down':  neighborY++; break;
+      case 'left':  neighborX--; break;
+      case 'up':    neighborY--; break;
+      case 'right': neighborX--; break;
+    }
+
+    // Return the neighbor
+    return LT.board.cells[neighborY] && LT.board.cells[neighborY][neighborX];
+
   },
   x:null,
   y:null
