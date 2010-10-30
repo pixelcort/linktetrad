@@ -7,6 +7,19 @@ LT.main = function() {
   var context = canvas.getContext('2d');
 
   LT.board.draw(context);
+
+  // Add an event listener to the canvas
+  $('canvas').click(function(e){
+    var clickX = e.offsetX,
+        clickY = e.offsetY;
+
+    // Determine which cell this should go to
+    var cellX = Math.min(Math.floor(clickX/(LT.board.width/LT.board.columns)),LT.board.columns-1);
+    var cellY = Math.min(Math.floor(clickY/(LT.board.height/LT.board.rows)),LT.board.rows-1);
+    console.log(cellX+':'+cellY);
+
+    var cell = LT.board.cells[cellY][cellX];
+  });
 };
 
 $(LT.main);
