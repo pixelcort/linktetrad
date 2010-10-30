@@ -22,8 +22,6 @@ LT.Cell.prototype = {
 
     // Drop the piece here
     this.piece = piece;
-    
-    // TODO: Tell the piece to draw itself here
 
     return true; // Piece was dropped
   },

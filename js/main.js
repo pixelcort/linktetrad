@@ -27,8 +27,10 @@ LT.main = function() {
     // Attempt to a piece into the cell;
     var pieceDropped = cell.dropPiece(piece);
 
-    // If the pieceDropped, Toggle the currentPlayer
     if (pieceDropped) {
+      // Draw the piece
+
+      // Toggle the currentPlayer
       LT.board.currentPlayer = (LT.board.currentPlayer === LT.Player.red) ? LT.Player.black : LT.Player.red;
 
       // TODO: Check the board to see if the currentPlayer won. We'll only need to check the pieces nearby the newly dropped piece
