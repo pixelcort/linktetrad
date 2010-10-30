@@ -11,7 +11,7 @@ LT.Piece.prototype = {
     context.beginPath();
     context.arc(centerX, centerY, (Math.min(options.width,options.height)/2)*(1-LT.board.padding)*(1-LT.Piece.PADDING), 0, 2*Math.PI, false);
     context.closePath();
-    context.fillStyle = '#0ff'; // TODO: Use the color of the player
+    context.fillStyle = this.player.team; // Use the color of the player
     context.fill();
   }
 };
