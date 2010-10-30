@@ -25,15 +25,15 @@ LT.main = function() {
     piece.player = LT.board.currentPlayer;
 
     // Attempt to a piece into the cell;
-    var pieceDropped = cell.dropPiece(piece);
+    var cellDroppedTo = cell.dropPiece(piece);
 
-    if (pieceDropped) {
+    if (cellDroppedTo) {
       // Draw the piece
       var cellWidth = LT.board.width/LT.board.columns;
       var cellHeight = LT.board.height/LT.board.rows;
       piece.draw(context, {
-        top: cellHeight*cell.y,
-        left: cellWidth*cell.x,
+        top: cellHeight*cellDroppedTo.y,
+        left: cellWidth*cellDroppedTo.x,
         width: cellWidth,
         height: cellHeight
       });
