@@ -12,6 +12,22 @@ LT.board = {
 
     context.fillStyle = gradient;
     context.fillRect(0,0,this.width,this.height);
+
+    // Draw the cells
+    var cellWidth = this.width/this.columns;
+    var cellHeight = this.height/this.rows;
+    for (var i=0,l=this.rows;i<l;i++) {
+      for (var j=0,m=this.columns;j<m;j++) {
+        var cell = this.cells[i][j];
+
+        cell.draw(context,{
+          top: cellHeight*i,
+          left: cellWidth*j,
+          width: cellWidth,
+          height: cellHeight
+        });
+      }
+    }
   },
   width: 600,
   height: 300
