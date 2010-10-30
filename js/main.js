@@ -29,6 +29,14 @@ LT.main = function() {
 
     if (pieceDropped) {
       // Draw the piece
+      var cellWidth = LT.board.width/LT.board.columns;
+      var cellHeight = LT.board.height/LT.board.rows;
+      piece.draw(context, {
+        top: cellHeight*cell.y,
+        left: cellWidth*cell.x,
+        width: cellWidth,
+        height: cellHeight
+      });
 
       // Toggle the currentPlayer
       LT.board.currentPlayer = (LT.board.currentPlayer === LT.Player.red) ? LT.Player.black : LT.Player.red;
