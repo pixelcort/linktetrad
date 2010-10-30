@@ -15,15 +15,15 @@ LT.Cell.prototype = {
   },
   dropPiece: function(piece) {
     // If this cell already has a piece, return the piece was not dropped
-    if (this.piece) return false;
+    if (this.piece) return null;
 
-    // If there is a cell below us and it does not have a piece, dropPiece on it instead
-    if (this.neighbor('down') && (!this.neighbor('down').piece)) return this.lowerCell().dropPiece(piece);
+    // If there is a cell below us and it does not have a piece, dropPiece on it instead and return the cell dropped onto
+    if (this.neighbor('down') && (!this.neighbor('down').piece)) return this.neighbor('down').dropPiece(piece);
 
     // Drop the piece here
     this.piece = piece;
 
-    return true; // Piece was dropped
+    return this; // The cell where Piece was dropped
   },
   neighbor: function(direction) { // Returns the neighbor cell, or null if it is out of bounds
     var neighborX = this.x,
