@@ -10,8 +10,8 @@ LT.Cell.prototype = {
     context.beginPath();
     context.arc(centerX, centerY, (Math.min(options.width,options.height)/2), 0, 2*Math.PI, false);
     context.closePath();
-    context.strokeStyle = '#fff';
-    context.stroke();
+    context.fillStyle = '#fff';
+    context.fill();
   }
 };
 
