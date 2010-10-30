@@ -3,6 +3,7 @@
 LT.board = {
   columns: 7,
   rows: 6,
+  padding: 0.1,
   connections: 4,
   cells: [], // row-major matrix
   draw: function(context) {
