@@ -19,6 +19,18 @@ LT.main = function() {
     console.log(cellX+':'+cellY);
 
     var cell = LT.board.cells[cellY][cellX];
+
+    // Create a new piece for the currentPlayer
+    var piece = new LT.Piece();
+    piece.player = LT.board.currentPlayer;
+
+    // Attempt to a piece into the cell;
+    var pieceDropped = cell.dropPiece(piece);
+
+    // If the pieceDropped, Toggle the currentPlayer
+    if (pieceDropped) {
+      LT.board.currentPlayer = (LT.board.currentPlayer === LT.Player.red) ? LT.Player.black : LT.Player.red;
+    }
   });
 };
 
