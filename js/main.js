@@ -43,7 +43,7 @@ LT.main = function() {
 
       // TODO: Check the board to see if the currentPlayer won. We'll only need to check the pieces nearby the newly dropped piece
       if (cellDroppedTo.hasWon()) {
-        console.log(cellDroppedTo.piece.player.team+' has won!');
+        window.alert(cellDroppedTo.piece.player.team+' has won!');
       }
     }
   });
