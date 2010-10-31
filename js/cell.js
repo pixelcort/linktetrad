@@ -33,6 +33,10 @@ LT.Cell.prototype = {
       case 'left':  neighborX--; break;
       case 'up':    neighborY--; break;
       case 'right': neighborX--; break;
+      case 'upleft':    neighborX--; neighborY--; break;
+      case 'upright':   neighborX++; neighborY--; break;
+      case 'downleft':  neighborX--; neighborY++; break;
+      case 'downright': neighborX++; neighborY++; break;
     }
 
     // Return the neighbor
