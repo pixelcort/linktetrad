@@ -43,6 +43,32 @@ LT.Cell.prototype = {
     return LT.board.cells[neighborY] && LT.board.cells[neighborY][neighborX];
 
   },
+  hasWon: function() {
+    // First, get the player for the piece of the current cell
+    var player = this.piece.player;
+
+    // Check each direction pair
+    if (this.pointCount('left',player)    +this.pointCount('right',player)    -1 >= LT.board.connections ||
+        this.pointCount('upleft',player)  +this.pointCount('downright',player)-1 >= LT.board.connections ||
+        this.pointCount('up',player)      +this.pointCount('down',player)     -1 >= LT.board.connections ||
+        this.pointCount('upright',player) +this.pointCount('downleft',player) -1 >= LT.board.connections) {
+      return true;
+    }
+    return false;
+  },
+  pointCount: function(direction,player) {
+    // If we don't have a piece, return early
+    if (!this.piece) return 0;
+
+    // If we our player doesn't match the provided player, return early
+    if (player !== this.piece.player) return 0;
+
+    // If we are at the edge/corner, return just one for ourselves
+    if (!this.neighbor(direction)) return 1;
+
+    // Return the pointCount of our neigbor in the provided direction plus one for ourselves
+    return (this.neighbor(direction).pointCount(direction,player) || 0) + 1;
+  },
   x:null,
   y:null
 };

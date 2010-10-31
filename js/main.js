@@ -42,6 +42,9 @@ LT.main = function() {
       LT.board.currentPlayer = (LT.board.currentPlayer === LT.Player.red) ? LT.Player.black : LT.Player.red;
 
       // TODO: Check the board to see if the currentPlayer won. We'll only need to check the pieces nearby the newly dropped piece
+      if (cellDroppedTo.hasWon()) {
+        console.log(cellDroppedTo.piece.player.team+' has won!');
+      }
     }
   });
 };
