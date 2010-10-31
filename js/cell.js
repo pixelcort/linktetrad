@@ -67,7 +67,7 @@ LT.Cell.prototype = {
     if (!this.neighbor(direction)) return 1;
 
     // Return the pointCount of our neigbor in the provided direction plus one for ourselves
-    return (this.neighbor(direction).pointCount(direction,player) || 0) + 1;
+    return this.neighbor(direction).pointCount(direction,player) + 1;
   },
   x:null,
   y:null
