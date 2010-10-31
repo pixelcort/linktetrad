@@ -29,10 +29,10 @@ LT.Cell.prototype = {
     var neighborX = this.x,
         neighborY= this.y;
     switch (direction) {
-      case 'down':  neighborY++; break;
-      case 'left':  neighborX--; break;
-      case 'up':    neighborY--; break;
-      case 'right': neighborX--; break;
+      case 'down':      neighborY++; break;
+      case 'left':      neighborX--; break;
+      case 'up':        neighborY--; break;
+      case 'right':     neighborX--; break;
       case 'upleft':    neighborX--; neighborY--; break;
       case 'upright':   neighborX++; neighborY--; break;
       case 'downleft':  neighborX--; neighborY++; break;
