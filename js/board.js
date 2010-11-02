@@ -8,8 +8,8 @@ LT.board = {
   cells: [], // row-major matrix
   draw: function(context) {
     var gradient = context.createLinearGradient(0,0,0,this.height);
-    gradient.addColorStop(0.0, '#000');
-    gradient.addColorStop(1.0, '#999');
+    gradient.addColorStop(0.0, '#555');
+    gradient.addColorStop(1.0, '#6f6');
 
     context.fillStyle = gradient;
     context.fillRect(0,0,this.width,this.height);
