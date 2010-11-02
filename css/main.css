@@ -17,6 +17,7 @@ h1 {
 }
 
 canvas {
+  -webkit-tap-highlight-color:transparent;
 }
 
 #turn {
