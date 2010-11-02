@@ -41,12 +41,20 @@ LT.main = function() {
       // Toggle the currentPlayer
       LT.board.currentPlayer = (LT.board.currentPlayer === LT.Player.red) ? LT.Player.black : LT.Player.red;
 
+      $('#turn').html(LT.board.currentPlayer.name + "'s turn!");
+
       // TODO: Check the board to see if the currentPlayer won. We'll only need to check the pieces nearby the newly dropped piece
       if (cellDroppedTo.hasWon()) {
-        window.alert(cellDroppedTo.piece.player.team+' has won!');
+        $('#turn').html(cellDroppedTo.piece.player.name+' has won!');
+        $('button').addClass('someoneWon');
       }
     }
   });
+
+  // Add an event listener to the reload button
+  $('button').click(function() {
+    window.location.reload();
+  })
 };
 
 $(LT.main);
