@@ -5,7 +5,7 @@ LT.Piece = function(){};
 LT.Piece.prototype = {
   player: null,
   draw: function(context, options) {
-    // console.log('drawing piece');
+    // window.console && window.console.log('drawing piece');
     var centerX = options.left+options.width/2;
     var centerY = options.top+options.height/2;
     context.beginPath();

@@ -1,7 +1,7 @@
 /*globals LT*/
 
 LT.main = function() {
-  console.log('Hello from jQuery!');
+  window.console && window.console.log('Hello from jQuery!');
 
   var canvas = $('canvas')[0];
   var context = canvas.getContext('2d');
@@ -16,7 +16,7 @@ LT.main = function() {
     // Determine which cell this should go to
     var cellX = Math.min(Math.floor(clickX/(LT.board.width/LT.board.columns)),LT.board.columns-1);
     var cellY = Math.min(Math.floor(clickY/(LT.board.height/LT.board.rows)),LT.board.rows-1);
-    // console.log(cellX+':'+cellY);
+    // window.console && window.console.log(cellX+':'+cellY);
 
     var cell = LT.board.cells[cellY][cellX];
 
