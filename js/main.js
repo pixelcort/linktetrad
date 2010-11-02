@@ -10,8 +10,8 @@ LT.main = function() {
 
   // Add an event listener to the canvas
   $('canvas').click(function(e){
-    var clickX = e.offsetX,
-        clickY = e.offsetY;
+    var clickX = e.offsetX || e.clientX - e.currentTarget.getBoundingClientRect().left,
+        clickY = e.offsetY || e.clientY - e.currentTarget.getBoundingClientRect().top;
 
     // Determine which cell this should go to
     var cellX = Math.min(Math.floor(clickX/(LT.board.width/LT.board.columns)),LT.board.columns-1);
