@@ -18,3 +18,19 @@ h1 {
 canvas {
   border: 2px solid #888;
 }
+
+#turn {
+  font-size: 3em;
+  background-color: #555;
+  display: inline-block;
+  padding: 5px;
+}
+
+button {
+  font-size: 3em;
+  display: none;
+}
+
+button.someoneWon {
+  display: inline-block;
+}
