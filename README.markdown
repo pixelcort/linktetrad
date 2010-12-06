@@ -1,6 +1,6 @@
 # linktetrad
 
-(c) 2010 Cortland Klein <me@pixelcort.com>
+©2010 Cortland Klein <me@pixelcort.com>
 
 linktetrad is a [Connect Four][1] clone.
 
